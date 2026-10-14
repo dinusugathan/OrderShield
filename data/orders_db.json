@@ -1,0 +1,168 @@
+[
+  {
+    "order_id": "ORD-8821",
+    "customer_name": "Sarah Jenkins",
+    "customer_email": "sarah.j@example.com",
+    "order_date": "2026-10-02T10:15:00Z",
+    "status": "DELIVERED",
+    "delivery_date": "2026-10-04T14:20:00Z",
+    "days_since_delivery": 10,
+    "carrier": "FedEx",
+    "tracking_number": "FDX-88210041",
+    "shipping_address": {
+      "street": "1424 Pine Valley Road",
+      "city": "Austin",
+      "state": "TX",
+      "zip": "78701"
+    },
+    "items": [
+      {
+        "sku": "SKU-TRT-01",
+        "title": "Barrier Renewal Multi-Peptide Serum",
+        "price": 46.00,
+        "quantity": 1,
+        "is_final_sale": false
+      },
+      {
+        "sku": "SKU-CLR-01",
+        "title": "Purifying Amino Acid Gel Cleanser",
+        "price": 28.00,
+        "quantity": 1,
+        "is_final_sale": false
+      }
+    ],
+    "subtotal": 74.00,
+    "shipping_fee": 0.00,
+    "total": 74.00,
+    "payment_method": "Visa ending in 4242",
+    "return_status": "NONE"
+  },
+  {
+    "order_id": "ORD-4409",
+    "customer_name": "Michael Chen",
+    "customer_email": "mchen@example.com",
+    "order_date": "2026-08-20T16:30:00Z",
+    "status": "DELIVERED",
+    "delivery_date": "2026-08-24T11:45:00Z",
+    "days_since_delivery": 51,
+    "carrier": "UPS",
+    "tracking_number": "1Z9999999999994409",
+    "shipping_address": {
+      "street": "88 Lincoln Blvd, Apt 4B",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98101"
+    },
+    "items": [
+      {
+        "sku": "SKU-TRT-02",
+        "title": "Encapsulated Retinal 0.1% Resurfacing Serum",
+        "price": 54.00,
+        "quantity": 1,
+        "is_final_sale": false
+      }
+    ],
+    "subtotal": 54.00,
+    "shipping_fee": 0.00,
+    "total": 54.00,
+    "payment_method": "Mastercard ending in 8812",
+    "return_status": "NONE"
+  },
+  {
+    "order_id": "ORD-9912",
+    "customer_name": "Elena Rostova",
+    "customer_email": "elena.r@example.com",
+    "order_date": "2026-10-12T09:00:00Z",
+    "status": "IN_TRANSIT",
+    "delivery_date": null,
+    "estimated_delivery": "Tomorrow by 4:00 PM EST",
+    "carrier": "USPS Priority",
+    "tracking_number": "940551189922339912",
+    "shipping_address": {
+      "street": "512 Ocean Drive",
+      "city": "Miami",
+      "state": "FL",
+      "zip": "33139"
+    },
+    "tracking_checkpoints": [
+      { "timestamp": "2026-10-12 11:30", "location": "Warehouse, Atlanta GA", "status": "Package Shipped" },
+      { "timestamp": "2026-10-13 06:15", "location": "Sort Facility, Jacksonville FL", "status": "In Transit" },
+      { "timestamp": "2026-10-14 08:45", "location": "Regional Hub, Miami FL", "status": "Arrived at Regional Depot" }
+    ],
+    "items": [
+      {
+        "sku": "SKU-SPF-01",
+        "title": "Hydra-Shield Invisible Mineral SPF 50+",
+        "price": 34.00,
+        "quantity": 2,
+        "is_final_sale": false
+      }
+    ],
+    "subtotal": 68.00,
+    "shipping_fee": 0.00,
+    "total": 68.00,
+    "payment_method": "Apple Pay (Visa 1092)",
+    "return_status": "NONE"
+  },
+  {
+    "order_id": "ORD-1045",
+    "customer_name": "David Miller",
+    "customer_email": "dmiller@example.com",
+    "order_date": "2026-10-14T17:15:00Z",
+    "status": "PROCESSING",
+    "delivery_date": null,
+    "carrier": "Pending Allocation",
+    "tracking_number": null,
+    "shipping_address": {
+      "street": "742 Evergreen Terrace",
+      "city": "Springfield",
+      "state": "OR",
+      "zip": "97477"
+    },
+    "items": [
+      {
+        "sku": "SKU-MOI-01",
+        "title": "Ceramide Triple Lipids Barrier Cream",
+        "price": 38.00,
+        "quantity": 1,
+        "is_final_sale": false
+      }
+    ],
+    "subtotal": 38.00,
+    "shipping_fee": 5.00,
+    "total": 43.00,
+    "payment_method": "Amex ending in 3001",
+    "return_status": "NONE"
+  },
+  {
+    "order_id": "ORD-7733",
+    "customer_name": "Jessica Taylor",
+    "customer_email": "jtaylor@example.com",
+    "order_date": "2026-10-06T14:10:00Z",
+    "status": "DELIVERED",
+    "delivery_date": "2026-10-09T16:00:00Z",
+    "days_since_delivery": 5,
+    "carrier": "FedEx Ground",
+    "tracking_number": "FDX-77330911",
+    "shipping_address": {
+      "street": "300 Market Street",
+      "city": "Philadelphia",
+      "state": "PA",
+      "zip": "19106"
+    },
+    "items": [
+      {
+        "sku": "SKU-EXF-FINAL",
+        "title": "AHA Glycolic Peeling Solution (Archive Sale)",
+        "price": 18.00,
+        "quantity": 1,
+        "is_final_sale": true
+      }
+    ],
+    "subtotal": 18.00,
+    "shipping_fee": 5.00,
+    "total": 23.00,
+    "payment_method": "Visa ending in 9021",
+    "return_status": "NONE"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "POL-RET-WINDOW",
+    "topic": "30-Day Return Window & Eligibility",
+    "rule": "Returns must be requested within 30 days of the recorded delivery date. Any return request past 30 days must be strictly rejected by the system. Opened skincare products with >50% remaining are accepted.",
+    "citation": "POL-SEC-3.1-RETURNS"
+  },
+  {
+    "id": "POL-FINAL-SALE",
+    "topic": "Final Sale & Clearance Exclusions",
+    "rule": "Items marked as 'Final Sale', 'Archive Sale', or hygiene-sealed sample kits are strictly non-refundable and non-returnable. No exceptions may be authorized by automated agents.",
+    "citation": "POL-SEC-3.4-EXCLUSIONS"
+  },
+  {
+    "id": "POL-CANCEL-WINDOW",
+    "topic": "Order Cancellation & Address Changes",
+    "rule": "Orders can only be modified or cancelled while in 'PROCESSING' status within 2 hours of placement. Once an order moves to 'IN_TRANSIT' or 'SHIPPED', the address cannot be altered by the merchant and cancellation is impossible; customer must initiate a return after delivery.",
+    "citation": "POL-SEC-4.2-MODIFICATIONS"
+  },
+  {
+    "id": "POL-REFUND-FEE",
+    "topic": "Return Shipping & Restocking Fee",
+    "rule": "A prepaid return shipping label is provided upon return authorization. A flat $5.00 return processing deduction applies unless the return is due to damaged goods or an incorrect item sent.",
+    "citation": "POL-SEC-3.7-FEES"
+  },
+  {
+    "id": "POL-LOST-PARCEL",
+    "topic": "Lost in Transit & Delay Protocol",
+    "rule": "If a package shows no tracking scan update for 5 consecutive business days, the agent may initiate a carrier tracer or offer a free priority replacement. Packages currently out for delivery cannot be declared lost.",
+    "citation": "POL-SEC-5.1-CLAIMS"
+  }
+]

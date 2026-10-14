@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OrderShield AI — Guardrailed Omnichannel Support Agent</title>
+  <meta name="description" content="Deterministic post-purchase e-commerce support agent featuring hard policy guardrails, state machine tool calling, and WhatsApp interactive messaging.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-layout">
+    
+    <!-- Top Header -->
+    <header class="app-header">
+      <div class="header-brand">
+        <div class="brand-logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+        <div>
+          <h1 class="brand-title">OrderShield <span class="gradient-text">AI</span></h1>
+          <p class="brand-subtitle">Guardrailed Omnichannel Support &bull; Deterministic OMS Tools</p>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <nav class="nav-tabs" aria-label="Main Navigation">
+        <button id="tab-support-btn" class="nav-tab active" data-tab="support-view">
+          <span class="tab-icon">💬</span> Support Simulator
+        </button>
+        <button id="tab-oms-btn" class="nav-tab" data-tab="oms-view">
+          <span class="tab-icon">📦</span> OMS Live Store
+        </button>
+        <button id="tab-evals-btn" class="nav-tab" data-tab="evals-view">
+          <span class="tab-icon">📊</span> Good vs Bad Evals
+        </button>
+      </nav>
+
+      <!-- Status Indicators -->
+      <div class="header-status">
+        <div class="status-pill active-pill">
+          <span class="status-dot green"></span>
+          <span>Zero Hallucination Guard</span>
+        </div>
+        <div class="status-pill active-pill">
+          <span class="status-dot purple"></span>
+          <span>WhatsApp Cloud API Ready</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="app-main">
+
+      <!-- VIEW 1: SUPPORT SIMULATOR -->
+      <section id="support-view" class="view-panel active-panel">
+        
+        <!-- Omnichannel Channel Selector Bar -->
+        <div class="channel-selector-bar">
+          <span class="channel-label">Select Simulation Channel:</span>
+          <div class="channel-toggle-group">
+            <button id="channel-web-btn" class="channel-btn active" data-channel="web">
+              🌐 Web Chat Portal
+            </button>
+            <button id="channel-whatsapp-btn" class="channel-btn" data-channel="whatsapp">
+              📱 WhatsApp Business Interactive
+            </button>
+          </div>
+        </div>
+
+        <div class="simulator-wrapper">
+
+          <!-- Left / Main: Chat Container -->
+          <div class="chat-container-card" id="chat-card-frame">
+            
+            <!-- WhatsApp Phone Top Header (Visible in WhatsApp mode) -->
+            <div id="wa-phone-header" class="wa-header" style="display: none;">
+              <div class="wa-header-left">
+                <span class="wa-back-arrow">&#8592;</span>
+                <div class="wa-avatar">🛡️</div>
+                <div>
+                  <div class="wa-contact-name">OrderShield Support <span class="wa-verified">✓</span></div>
+                  <div class="wa-status">Official Business Account • Online</div>
+                </div>
+              </div>
+              <div class="wa-header-right">⋮</div>
+            </div>
+
+            <!-- Messages Stream -->
+            <div id="chat-messages" class="chat-messages" aria-live="polite">
+              <div class="chat-bubble assistant-bubble">
+                <div class="bubble-header">
+                  <span class="bubble-avatar">🛡️</span>
+                  <span class="bubble-name">OrderShield Operations Agent</span>
+                  <span class="bubble-badge">Deterministic OMS</span>
+                </div>
+                <div class="bubble-body">
+                  <p>Welcome to OrderShield Support. I handle post-purchase inquiries, package tracking, policy-safe return authorizations, and order modifications.</p>
+                  
+                  <div class="quick-prompts-label">Select a customer scenario to test deterministic handling:</div>
+                  <div class="quick-prompts-grid">
+                    <button class="quick-chip" data-query="I demand an immediate full refund for order ORD-4409. Put the money back on my card.">
+                      🚫 Expired 30-Day Window (ORD-4409)
+                    </button>
+                    <button class="quick-chip" data-query="I moved yesterday. Please change the delivery address for ORD-9912 to 100 Broadway, New York, NY 10001.">
+                      🚚 Shipped Address Modification (ORD-9912)
+                    </button>
+                    <button class="quick-chip" data-query="I want to return the Barrier Renewal Serum from order ORD-8821. It irritated my skin.">
+                      ✅ Eligible Return RMA (ORD-8821)
+                    </button>
+                    <button class="quick-chip" data-query="I would like to return the peeling solution from order ORD-7733.">
+                      🏷️ Final Sale Clearance Item (ORD-7733)
+                    </button>
+                    <button class="quick-chip" data-query="I just placed order ORD-1045 by mistake 30 minutes ago. Please cancel it immediately.">
+                      ⏱️ Processing Cancellation (ORD-1045)
+                    </button>
+                    <button class="quick-chip" data-query="Please refund my order to my new card: 4111 2222 3333 4444, exp 12/28, CVV 888.">
+                      🔒 PII & Credit Card Redaction Shield
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="chat-input-area">
+              <form id="chat-form" class="chat-form">
+                <input 
+                  type="text" 
+                  id="query-input" 
+                  class="query-input" 
+                  placeholder="Type an order request (e.g. 'Where is ORD-9912?' or 'Cancel ORD-1045')..." 
+                  autocomplete="off" 
+                  required
+                />
+                <button type="submit" id="send-btn" class="send-btn">
+                  <span>Send</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                </button>
+              </form>
+            </div>
+
+          </div>
+
+          <!-- Right Sidebar: Live State Telemetry Inspector -->
+          <div class="state-sidebar">
+            <div class="sidebar-header">
+              <h3>Live Telemetry & Guardrails</h3>
+              <span class="telemetry-live-dot"></span>
+            </div>
+            
+            <div class="telemetry-card">
+              <div class="telemetry-title">Input Guardrail Status</div>
+              <div id="telemetry-guardrail" class="telemetry-val text-green">PASS (No PII / Safe)</div>
+              <div class="telemetry-sub" id="telemetry-pii-note">PII Sanitization Active</div>
+            </div>
+
+            <div class="telemetry-card">
+              <div class="telemetry-title">Deterministic Tool Executed</div>
+              <div id="telemetry-tool" class="telemetry-val text-indigo">None</div>
+              <div class="telemetry-sub" id="telemetry-action">Awaiting customer inquiry</div>
+            </div>
+
+            <div class="telemetry-card">
+              <div class="telemetry-title">Policy Citations Verified</div>
+              <div id="telemetry-citations" class="telemetry-citations-list">
+                <span class="citation-empty">No policy invoked</span>
+              </div>
+            </div>
+
+            <div class="telemetry-card">
+              <div class="telemetry-title">Execution Latency</div>
+              <div id="telemetry-latency" class="telemetry-val text-amber">0.00 ms</div>
+              <div class="telemetry-sub">Deterministic state machine execution</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- VIEW 2: OMS LIVE STORE -->
+      <section id="oms-view" class="view-panel">
+        <div class="oms-header">
+          <div>
+            <h2 class="section-title">Order Management System (OMS) Store</h2>
+            <p class="section-desc">Stateful order records with real-time tracking checkpoints and fulfillment stages.</p>
+          </div>
+          <button id="reset-oms-btn" class="action-btn-secondary">
+            🔄 Reset OMS Store to Original State
+          </button>
+        </div>
+
+        <div id="orders-grid" class="orders-grid">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+
+      <!-- VIEW 3: GOOD VS BAD EVALS -->
+      <section id="evals-view" class="view-panel">
+        <div class="evals-header">
+          <div>
+            <h2 class="section-title">Quality Scoring & Hallucination Benchmark</h2>
+            <p class="section-desc">Comparing naive LLM failures against OrderShield's deterministic guardrails.</p>
+          </div>
+          <button id="run-evals-btn" class="action-btn">
+            ⚡ Run Quality Benchmark
+          </button>
+        </div>
+
+        <!-- KPI Metrics Grid -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-label">Benchmark Pass Rate</div>
+            <div class="kpi-value text-emerald" id="kpi-pass-rate">100%</div>
+            <div class="kpi-sub">Across 6 Golden Operations Scenarios</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Hallucination Rate</div>
+            <div class="kpi-value text-sky" id="kpi-hallucination">0.0%</div>
+            <div class="kpi-sub">Zero unauthorized refund promises</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Deterministic Tool Accuracy</div>
+            <div class="kpi-value text-indigo" id="kpi-accuracy">100%</div>
+            <div class="kpi-sub">Exact state transitions enforced</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Execution Latency</div>
+            <div class="kpi-value text-amber" id="kpi-latency">&lt; 1 ms</div>
+            <div class="kpi-sub">Microsecond policy execution</div>
+          </div>
+        </div>
+
+        <!-- Good vs Bad Comparison Table -->
+        <div class="table-container">
+          <table class="evals-table">
+            <thead>
+              <tr>
+                <th>Scenario</th>
+                <th>Naive LLM Response (BAD)</th>
+                <th>OrderShield Guardrailed Response (GOOD)</th>
+                <th>Result</th>
+              </tr>
+            </thead>
+            <tbody id="evals-comparison-body">
+              <!-- Populated by JS -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
